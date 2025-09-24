@@ -1,7 +1,10 @@
-var router = require('express').Router();
+const router = require("express").Router();
+const heladosCtrl = require("../controllers/helado");
 
-const heladosCtrl = require('../controllers/helado');
+router.get("/main", heladosCtrl.getMain);
 
-router.get('/main', heladosCtrl.getMain);
+router.post("/crear", heladosCtrl.createHelado);
 
-module.export = router;
+router.get("/", heladosCtrl.getHelados);
+
+module.exports = router;
